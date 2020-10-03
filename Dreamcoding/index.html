@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>David's Portfolio</title>
+    <meta name="description" content="Portfolio" />
+    <meta name="author" content="David" />
+    <script
+      src="https://kit.fontawesome.com/b708d5fd97.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="imgs/favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+    <!--  HTML이 Parsing 이 되는동안 Javascript 를 다운로드 받고, HTML이 전부 Parsing이 완료가 된다면 js를 실행시킴 -->
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav id="navbar">
+      <div class="navbar__logo">
+        <i class="fab fa-diaspora"></i>
+        <a href="#">David Park</a>
+      </div>
+      <ul class="navbar__menu">
+        <li class="navbar__menu__item">Home</li>
+        <li class="navbar__menu__item">About</li>
+        <li class="navbar__menu__item">Skills</li>
+        <li class="navbar__menu__item">My Work</li>
+        <li class="navbar__menu__item">Testimonial</li>
+        <li class="navbar__menu__item">Contact</li>
+      </ul>
+    </nav>
+    <!-- Home -->
+    <section id="home">
+      <img
+        src="imgs/david.jpg"
+        alt="David's profile photo"
+        class="home__avatar"
+      />
+
+      <h1 class="home__title">Hello, <br />I'am David Park</h1>
+      <h2 class="home__description">I am thirsty of learning</h2>
+      <button class="home__contact">Contact Me !</button>
+    </section>
+    <!-- About -->
+    <section id="about">
+      <h1>Abour Me</h1>
+      <p>I am the best :)</p>
+      <div class="about__major">
+        <div class="major">
+          <div class="major__icon">
+            <i class="fab fa-html5"></i>
+          </div>
+          <div class="major__title">Front-End</div>
+          <div class="magor__description">HTML, CSS, Javascript</div>
+        </div>
+
+        <div class="major">
+          <div class="major__icon">
+            <i class="fab fa-html5"></i>
+          </div>
+          <div class="major__title">Front-End</div>
+          <div class="magor__description">HTML, CSS, Javascript</div>
+        </div>
+
+        <div class="major">
+          <div class="major__icon">
+            <i class="fab fa-html5"></i>
+          </div>
+          <div class="major__title">Front-End</div>
+          <div class="magor__description">HTML, CSS, Javascript</div>
+        </div>
+      </div>
+      <div class="about__jobs">
+        <div class="job">
+          <img src="/imgs/robotis_logo.png" alt="job__logo" />
+          <p class="job__name">
+            Working at ROBOTIS as Technical Supporter and e-Manual Manager
+          </p>
+          <p class="job__period">2019 Mar&ndash;Untill now</p>
+
+          <p class="job__name">Doing Nothing at home</p>
+          <p class="job__period">Infant&ndash;Forever</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skill">
+      <h1>Skills</h1>
+      <h2>Skills & Attribute</h2>
+      <p>I got nothing :(</p>
+      <div class="skillset">
+        <div class="skillset__left">
+          <h3 class="skillset__title">Skills</h3>
+          <div class="skill__description">
+            <span>HTML</span>
+            <span>99%</span>
+          </div>
+          <div class="skill__bar">
+            <div class="skill__value"></div>
+          </div>
+          <div class="skill__description">
+            <span>CSS</span>
+            <span>99%</span>
+          </div>
+          <div class="skill__bar">
+            <div class="skill__value"></div>
+          </div>
+          <div class="skill__description">
+            <span>Javascript</span>
+            <span>99%</span>
+          </div>
+          <div class="skill__bar">
+            <div class="skill__value"></div>
+          </div>
+          <div class="skill__description">
+            <span>REACT</span>
+            <span>99%</span>
+          </div>
+          <div class="skill__bar">
+            <div class="skill__value"></div>
+          </div>
+        </div>
+        <div class="skillset__right">
+          <div class="tools">
+            <h3 class="skillset__title">Tools</h3>
+            <ul class="tools__list">
+              <li>
+                <span>Visual Studio Code</span>
+                <span>Atom</span>
+                <span>Markdown</span>
+                <span>Jekyll</span>
+                <span>5</span>
+              </li>
+            </ul>
+          </div>
+          <div class="etc">
+            <h3 class="skillset__title">Etc</h3>
+            <ul class="etc__list">
+              <li><span>Git</span></li>
+              <li><span>Engineering</span></li>
+              <li><span>Arduino</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section id="work">
+      <h1>My Work</h1>
+      <h3>Projects</h3>
+      <div class="work__categories">
+        <button class="category__btn">
+          All <span class="category__count">8</span>
+        </button>
+        <button class="category__btn">
+          Front-End <span class="category__count">3</span>
+        </button>
+        <button class="category__btn">
+          Back-End <span class="category__count">2</span>
+        </button>
+        <button class="category__btn">
+          Mobile <span class="category__count">3</span>
+        </button>
+      </div>
+      <div class="work__projects">
+        <a
+          href="https://github.com/ROBOTIS-David/Portfolio"
+          class="project"
+          target="blank"
+        >
+          <img
+            class="project__img"
+            src="imgs/projects/robotis_logo.png"
+            alt="e-Manual"
+          />
+          <div class="project__description">
+            <h3>Git Site</h3>
+            <span>Clone Coding with HTML and CSS</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="work__projects">
+        <a
+          href="https://github.com/ROBOTIS-David/Portfolio"
+          class="project"
+          target="blank"
+        >
+          <img
+            class="project__img"
+            src="imgs/projects/robotis_logo.png"
+            alt="e-Manual"
+          />
+          <div class="project__description">
+            <h3>Git Site 2</h3>
+            <span>Clone Coding 2 with HTML and CSS</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="work__projects">
+        <a
+          href="https://github.com/ROBOTIS-David/Portfolio"
+          class="project"
+          target="blank"
+        >
+          <img
+            class="project__img"
+            src="imgs/projects/robotis_logo.png"
+            alt="e-Manual"
+          />
+          <div class="project__description">
+            <h3>Git Site3</h3>
+            <span>Clone Coding with HTML and CSS</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="work__projects">
+        <a
+          href="https://github.com/ROBOTIS-David/Portfolio"
+          class="project"
+          target="blank"
+        >
+          <img
+            class="project__img"
+            src="imgs/projects/robotis_logo.png"
+            alt="e-Manual"
+          />
+          <div class="project__description">
+            <h3>Git Site4</h3>
+            <span>Clone Coding with HTML and CSS</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="work__projects">
+        <a
+          href="https://github.com/ROBOTIS-David/Portfolio"
+          class="project"
+          target="blank"
+        >
+          <img
+            class="project__img"
+            src="imgs/projects/robotis_logo.png"
+            alt="e-Manual"
+          />
+          <div class="project__description">
+            <h3>Git Site5</h3>
+            <span>Clone Coding with HTML and CSS</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="work__projects">
+        <a
+          href="https://github.com/ROBOTIS-David/Portfolio"
+          class="project"
+          target="blank"
+        >
+          <img
+            class="project__img"
+            src="imgs/projects/robotis_logo.png"
+            alt="e-Manual"
+          />
+          <div class="project__description">
+            <h3>Git Site6</h3>
+            <span>Clone Coding with HTML and CSS</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="work__projects">
+        <a
+          href="https://github.com/ROBOTIS-David/Portfolio"
+          class="project"
+          target="blank"
+        >
+          <img
+            class="project__img"
+            src="imgs/projects/robotis_logo.png"
+            alt="e-Manual"
+          />
+          <div class="project__description">
+            <h3>Git Site7</h3>
+            <span>Clone Coding with HTML and CSS</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="work__projects">
+        <a
+          href="https://github.com/ROBOTIS-David/Portfolio"
+          class="project"
+          target="blank"
+        >
+          <img
+            class="project__img"
+            src="imgs/projects/robotis_logo.png"
+            alt="e-Manual"
+          />
+          <div class="project__description">
+            <h3>Git Site 8</h3>
+            <span>Clone Coding with HTML and CSS</span>
+          </div>
+        </a>
+      </div>
+    </section>
+    <!-- Testimonial -->
+    <section id="testimonial">
+      <h1>Testimonial</h1>
+      <h3>See what they say about me</h3>
+      <div class="testimonis">
+        <div class="testimonial">
+          <img
+            src="imgs/testimonial/david.jpg"
+            alt="People"
+            class="testimonial__avatar"
+          />
+          <div class="testimonial__speech-bubble">
+            <p>BLAH 1</p>
+            <p class="name"><a href="#">Ellie</a>/Samsung</p>
+          </div>
+        </div>
+        <div class="testimonial">
+          <img
+            src="imgs/testimonial/david.jpg"
+            alt="People"
+            class="testimonial__avatar"
+          />
+          <div class="testimonial__speech-bubble">
+            <p>BLAH 2</p>
+            <p class="name"><a href="#">Ellie</a>/Samsung</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact -->
+    <section id="contact">
+      <h1 class="contact__title">Let's Talk</h1>
+      <h2 class="contact__email">rjtp5670@gmail.com</h2>
+      <div class="contact__links">
+        <a href="https://github.com/ROBOTIS-David/Portfolio" target="blank">
+          <i class="fab fa-github-square"></i>
+        </a>
+      </div>
+      <div class="contact__rights">2020 Dream Coding - All right reserved</div>
+    </section>
+  </body>
+</html>
