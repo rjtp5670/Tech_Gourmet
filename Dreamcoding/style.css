@@ -28,11 +28,11 @@
   --weight-regular: 400;
 
   /* Size */
---size-border-radius: 4px;
+  --size-border-radius: 4px;
 
 }
 
-/* UIniversal tags: html파일 전체 적용 */
+/* Universal tags: html파일 전체 적용 */
 * {
   box-sizing: border-box;
 }
@@ -40,7 +40,7 @@
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
-   cursor: default;/*Hovering 시에, 마우스 커서가 변하지 않음  */
+  cursor: default;/*Hovering 시에, 마우스 커서가 변하지 않음  */
 }
 
 a {
@@ -51,6 +51,17 @@ a {
 ul {
   list-style: none;
   padding-left: 0;
+}
+
+li {
+list-style: none;
+}
+
+button{
+  background-color: transparent; 
+  cursor: pointer;
+  border: none; /* border 없음*/
+  outline: none; 
 }
 
 /*Typograpy: <h> 헤딩에 대한 정의*/
@@ -118,4 +129,33 @@ p {
 .navbar__menu__item:hover {
   background-color: var(--color-dark-pink);
   
+}
+
+#home{
+  background: url('imgs/homebackground.png') center/cover no-repeat;
+  padding: 40px;
+  text-align: center;
+}
+
+.home__avatar {
+  width: 250px;
+  height: 250px;;
+  border-radius: 50%;
+  border: 2px solid var(--color-white);
+}
+
+.home__title,
+.home__description {
+  color: var(--color-white);
+}
+
+.home__contact{
+  color: var(--color-white);
+  font-size: var(--font-regular);
+  font-weight: var(--weight-bold);
+  margin: 24px;
+  padding: 8px 12px;
+  border: 2px solid var(--color-white);
+  border-radius: var(--size-border-radius);
+
 }
