@@ -15,14 +15,14 @@
   --color-orange: #feb546;
   --color-black: #000000;
 
-  /* Font Size */
+  /* Font Size: 일반적으로 아래처럼 사용됨*/
   --font-large: 48px;
   --font-medium: 28px;
   --font-regular: 18px;
   --font-small: 16px;
   --font-micro: 14px;
 
-  /* Font Weight */
+  /* Font Weight : Font의 사이즈*/
   --weight-bold: 700;
   --weight-semi-bold: 600;
   --weight-regular: 400;
@@ -30,7 +30,38 @@
   /* Size */
 }
 
-/* UIniversal tags */
+/* UIniversal tags: html파일 전체 적용 */
 * {
   box-sizing: border-box;
 }
+
+/*Typograpy: <h> 헤딩에 대한 정의*/
+
+h1 {
+  font-size: var(--font-large);
+  font-weight: var(--weight-bold);
+  color: var(--color-black);
+  margin: 16px 0;
+}
+
+h2 {
+  font-size: var(--font-medium);
+  font-weight: : var(--weight-semi-bold);
+  color: var(--color-black);
+  margin: 8px 0;
+}
+
+h3 {
+  font-size: var(--font-medium);
+  font-weight: var(--font-regular);
+  color: var(--color-black);
+  margin: 8px 0;
+}
+
+p {
+  font-size: var(--font-medium);
+  font-weight: var(--font-regular);
+  color: var(--color-black);
+  margin: 4px 0;
+}
+
