@@ -31,7 +31,7 @@
   --size-border-radius: 4px;
 
 /* Animation */
-  --animation-duration: all 300ms ease;
+  --animation-duration: 300ms;
 
 }
 
@@ -296,4 +296,98 @@ transition: var(--animation-duration);
 }
 .tools, .etc {
   padding: 20px;
+}
+
+/* Work */
+.work__categories{
+  margin: 40px;
+}
+.category__btn{
+  border: 1px solid var(--color-dark-grey);
+  border-radius: 4px;
+  font-size: var(--font-regular);
+  padding: 8px 48px;
+}
+.category__btn.active,
+.category__btn:hover {
+  background-color: var(--color-pink);
+  color: var(--color-white);
+} 
+
+.category__btn.active .category__count.active,
+.category__btn:hover .category__count { /* 4:14 무슨말이지? 카테고리 버튼이  active이고, catergory count일때만, category버튼이 호버상태이고 (콤마 필수> and 역할?,) 카테고리인 상태일때만?*/
+  opacity: 1;
+  top: 0;
+}
+
+.category__count{
+  background-color: var(--color-orange);
+  border-radius: 50%;
+  color: var(--color-white);
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  display: inline-block;
+  position: relative;
+  top: -20px;
+  left: 4px;
+  opacity: 0;
+  transition: all var(--animation-duration) ease;
+}
+
+.work__projects {
+  display: flex;
+  flex-wrap: wrap-reverse; /* 아이템이 꽉차면 자동 줄바꿈 */
+  justify-content: center;
+}
+
+.project {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 280px;
+  height: 280px;
+  margin: 2px;
+  background-color: var(--color-light-white);
+}
+
+.project__img {
+  max-width: 100%; /* Viewport 사이즈가 줄어도 자신이 담겨있는 box (project class) 이미지 크기가 비대하게 커져 영역을 서로 침범하지않게 100%로 유지 */
+  max-height: 100%;
+}
+
+.project__description {
+  position: absolute; /* hovering시 박스에서 빠져나가게 하기위해, project 박스를 넘기지 않기위해 project를 relative로 설정*/
+  background-color: var(--color-black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all var(--animation-duration) ease-in;
+  transform: translateY(10px);
+}
+
+.project:hover .project__description { /* project 박스에 호버링이고, .project__description에 있다면 */
+  opacity: 0.8;
+  transform: translateY(0px);
+}
+
+.project__description h3{
+  color: var(--color-white);
+}
+
+.project__description h3:after{ /* after: h3 다음은 이라는뜻 */
+  content: '';
+  display: block; /* 왜 block? */
+  position: relative;
+  left: 50%;
+  width: 25px;
+  height: 2px;
+  margin-left: -12px;
+  margin-top: 8px;
+  background-color: var(--color-dark0white)
 }
