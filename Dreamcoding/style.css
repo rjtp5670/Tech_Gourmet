@@ -394,8 +394,9 @@ transition: var(--animation-duration);
 
 #testimonials {
   background-color: var(--color-light-white);
-}
-.testimonials{
+ }
+
+.testimonials {
   margin: 40px;
 }
 
@@ -404,7 +405,7 @@ transition: var(--animation-duration);
   margin: 32px 0;
 }
 
-.testimonial__avatar{
+.testimonial__avatar {
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -418,17 +419,18 @@ transition: var(--animation-duration);
   margin-left: 40px;
 }
 
-.testimonial__speech-bubble{
+.testimonial__speech-bubble {
   padding: 18px;
   background-color: var(--color-white);
   border-radius: var(--size-border-radius);
+  max-width: 1200px;
 }
 
-.testimonial__speech-bubble p{ /* .testimonial__speech-bubble의 p 태그는 */
+.testimonial__speech-bubble p { /* .testimonial__speech-bubble의 p 태그는 */
   color: var(--color-light-grey);
 }
 
-.testimonial__speech-bubble a{ /* .testimonial__speech-bubble의 a 태그는 */
+.testimonial__speech-bubble a { /* .testimonial__speech-bubble의 a 태그는 */
   color: var(--color-pink);
 }
 
