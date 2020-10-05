@@ -84,7 +84,7 @@ h2 {
 }
 
 h3 {
-  font-size: var(--font-medium);
+  font-size: var(--font-regular);
   font-weight: var(--font-regular);
   color: var(--color-black);
   margin: 8px 0;
@@ -424,10 +424,36 @@ transition: var(--animation-duration);
   border-radius: var(--size-border-radius);
 }
 
-.testimonial__speech-bubble p{
+.testimonial__speech-bubble p{ /* .testimonial__speech-bubble의 p 태그는 */
   color: var(--color-light-grey);
 }
 
-.testimonial__speech-bubble a{
+.testimonial__speech-bubble a{ /* .testimonial__speech-bubble의 a 태그는 */
   color: var(--color-pink);
+}
+
+#contact {
+  background-color: var(--color-pink);
+}
+
+.contact__title,
+.contact__email,
+.contact__rights {
+  color: var(--color-white);
+}
+
+.contact__title{
+  margin: 32px 0;
+}
+
+.contact__links {
+  font-size: var(--font-large);
+  margin: 24px 0;
+  
+}
+
+.contact__links i:hover { /* .contact__links에 있는 i에 마우스가 올라가면 */
+  transform: scale(1.1);
+  color: var(--color-yellow);
+  transition: all var(--animation-duration) ease-in-out;
 }
