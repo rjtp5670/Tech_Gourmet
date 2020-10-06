@@ -99,11 +99,20 @@ p {
 /* Navbar */
 
 #navbar {
+  width: 100%;
+  position: fixed;
   display: flex;
   justify-content: space-between;
-  background-color: var(--color-pink);
   align-items: center; /*nav item을 center 배치 (중심이 수평축, 수직이 반대축)*/
   padding: 16px;
+  background-color: transparent;
+}
+
+#navbar.navbar--dark {
+  /* js에서 적용한 코드가 true일때 #navbar에 navbar__dark가 추가되고, CSS 가 적용됨 */
+  background-color: var(--color-pink);
+  padding: 8px;
+  transition: all var(--animation-duration) ease-in-out;
 }
 
 .navbar__menu {
