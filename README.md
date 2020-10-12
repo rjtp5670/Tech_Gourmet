@@ -1,2 +1,2 @@
 # clone_coding
-Clone coding with Elin
+Let's have a fun with the CSS :)
