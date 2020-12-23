@@ -106,6 +106,7 @@ p {
   align-items: center; /*nav item을 center 배치 (중심이 수평축, 수직이 반대축)*/
   padding: 16px;
   background-color: transparent;
+  z-index: 1;
 }
 
 #navbar.navbar--dark {
