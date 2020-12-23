@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!-- saved from url=(0095)chrome-extension://cbnaodkpfinfiipjblikofhlhlcickei/src/iframe/popoverIframe/popover-index.html -->
+<html lang="en" ng-app="popoverApp" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    
+    <link rel="stylesheet" href="chrome-extension://cbnaodkpfinfiipjblikofhlhlcickei/src/iframe/popoverIframe/css/gistnotePopover.css">
+    <script src="chrome-extension://cbnaodkpfinfiipjblikofhlhlcickei/build/iframe/vendor.build.js"></script>
+    <script src="chrome-extension://cbnaodkpfinfiipjblikofhlhlcickei/build/iframe/popoverIframe/popoverApp.build.js"></script>
+  </head>
+  <body>
+    <div class="no-select gistnote-popover-wrapper ng-scope" ng-controller="popoverCtrl">
+      <!-- ngIf: !_states.showSetting --><div ng-if="!_states.showSetting" class="ng-scope">
+        <!-- ngIf: _states.highlightId -->
+
+        <div class="gistnote-popover-circle-list">
+          <!-- Don't show 5th color for testing group-->
+          <!-- ngRepeat: colorCode in _states.colorCodes track by $index --><!-- ngIf: colorCode != null && !(!_states.subscription && $index=== 4 && _states.onboarding
+             && _states.onboarding.colorLimitReferralTest &&_states.onboarding.colorLimitReferralTest < 4) --><div ng-repeat="colorCode in _states.colorCodes track by $index" ng-if="colorCode != null &amp;&amp; !(!_states.subscription &amp;&amp; $index=== 4 &amp;&amp; _states.onboarding
+             &amp;&amp; _states.onboarding.colorLimitReferralTest &amp;&amp;_states.onboarding.colorLimitReferralTest &lt; 4)" class="gistnote-popover-circle-wrapper ng-scope">
+            <div class="gistnote-circle gistnote-circle-dim" ng-class="{&#39;gistnote-circle-dim&#39;: $index+1 !==_states.lightedUpCircle}" ng-style="{&#39;background-color&#39;: colorCode, &#39;border-color&#39;: shadeColor(colorCode, -0.05)}" ng-click="clickedCircleListener($index+1)" style="background-color: rgb(255, 202, 215); border-color: rgb(242, 192, 204);">
+              <!-- Don't show 5th color for TESTING GROUP-->
+              <!-- ngIf: $index+1 === _states.lightedUpCircle -->
+
+              <!-- TESTING GROUP: limited to two colors only -->
+              <!-- ngIf: !_states.subscription
+          && _states.onboarding
+          && _states.onboarding.colorLimitReferralTest
+          && $index > _states.onboarding.colorLimitReferralTest -->
+            </div>
+
+            <!-- Color tags -->
+            <!-- ngIf: _states.activeFolder && _states.activeFolder.colorTags && _states.activeFolder.colorTags[$index] != '' -->
+          </div><!-- end ngIf: colorCode != null && !(!_states.subscription && $index=== 4 && _states.onboarding
+             && _states.onboarding.colorLimitReferralTest &&_states.onboarding.colorLimitReferralTest < 4) --><!-- end ngRepeat: colorCode in _states.colorCodes track by $index --><!-- ngIf: colorCode != null && !(!_states.subscription && $index=== 4 && _states.onboarding
+             && _states.onboarding.colorLimitReferralTest &&_states.onboarding.colorLimitReferralTest < 4) --><div ng-repeat="colorCode in _states.colorCodes track by $index" ng-if="colorCode != null &amp;&amp; !(!_states.subscription &amp;&amp; $index=== 4 &amp;&amp; _states.onboarding
+             &amp;&amp; _states.onboarding.colorLimitReferralTest &amp;&amp;_states.onboarding.colorLimitReferralTest &lt; 4)" class="gistnote-popover-circle-wrapper ng-scope">
+            <div class="gistnote-circle gistnote-circle-dim" ng-class="{&#39;gistnote-circle-dim&#39;: $index+1 !==_states.lightedUpCircle}" ng-style="{&#39;background-color&#39;: colorCode, &#39;border-color&#39;: shadeColor(colorCode, -0.05)}" ng-click="clickedCircleListener($index+1)" style="background-color: rgb(255, 222, 112); border-color: rgb(242, 211, 106);">
+              <!-- Don't show 5th color for TESTING GROUP-->
+              <!-- ngIf: $index+1 === _states.lightedUpCircle -->
+
+              <!-- TESTING GROUP: limited to two colors only -->
+              <!-- ngIf: !_states.subscription
+          && _states.onboarding
+          && _states.onboarding.colorLimitReferralTest
+          && $index > _states.onboarding.colorLimitReferralTest -->
+            </div>
+
+            <!-- Color tags -->
+            <!-- ngIf: _states.activeFolder && _states.activeFolder.colorTags && _states.activeFolder.colorTags[$index] != '' -->
+          </div><!-- end ngIf: colorCode != null && !(!_states.subscription && $index=== 4 && _states.onboarding
+             && _states.onboarding.colorLimitReferralTest &&_states.onboarding.colorLimitReferralTest < 4) --><!-- end ngRepeat: colorCode in _states.colorCodes track by $index --><!-- ngIf: colorCode != null && !(!_states.subscription && $index=== 4 && _states.onboarding
+             && _states.onboarding.colorLimitReferralTest &&_states.onboarding.colorLimitReferralTest < 4) --><div ng-repeat="colorCode in _states.colorCodes track by $index" ng-if="colorCode != null &amp;&amp; !(!_states.subscription &amp;&amp; $index=== 4 &amp;&amp; _states.onboarding
+             &amp;&amp; _states.onboarding.colorLimitReferralTest &amp;&amp;_states.onboarding.colorLimitReferralTest &lt; 4)" class="gistnote-popover-circle-wrapper ng-scope">
+            <div class="gistnote-circle gistnote-circle-dim" ng-class="{&#39;gistnote-circle-dim&#39;: $index+1 !==_states.lightedUpCircle}" ng-style="{&#39;background-color&#39;: colorCode, &#39;border-color&#39;: shadeColor(colorCode, -0.05)}" ng-click="clickedCircleListener($index+1)" style="background-color: rgb(255, 251, 120); border-color: rgb(242, 238, 114);">
+              <!-- Don't show 5th color for TESTING GROUP-->
+              <!-- ngIf: $index+1 === _states.lightedUpCircle -->
+
+              <!-- TESTING GROUP: limited to two colors only -->
+              <!-- ngIf: !_states.subscription
+          && _states.onboarding
+          && _states.onboarding.colorLimitReferralTest
+          && $index > _states.onboarding.colorLimitReferralTest -->
+            </div>
+
+            <!-- Color tags -->
+            <!-- ngIf: _states.activeFolder && _states.activeFolder.colorTags && _states.activeFolder.colorTags[$index] != '' -->
+          </div><!-- end ngIf: colorCode != null && !(!_states.subscription && $index=== 4 && _states.onboarding
+             && _states.onboarding.colorLimitReferralTest &&_states.onboarding.colorLimitReferralTest < 4) --><!-- end ngRepeat: colorCode in _states.colorCodes track by $index --><!-- ngIf: colorCode != null && !(!_states.subscription && $index=== 4 && _states.onboarding
+             && _states.onboarding.colorLimitReferralTest &&_states.onboarding.colorLimitReferralTest < 4) --><div ng-repeat="colorCode in _states.colorCodes track by $index" ng-if="colorCode != null &amp;&amp; !(!_states.subscription &amp;&amp; $index=== 4 &amp;&amp; _states.onboarding
+             &amp;&amp; _states.onboarding.colorLimitReferralTest &amp;&amp;_states.onboarding.colorLimitReferralTest &lt; 4)" class="gistnote-popover-circle-wrapper ng-scope">
+            <div class="gistnote-circle gistnote-circle-dim" ng-class="{&#39;gistnote-circle-dim&#39;: $index+1 !==_states.lightedUpCircle}" ng-style="{&#39;background-color&#39;: colorCode, &#39;border-color&#39;: shadeColor(colorCode, -0.05)}" ng-click="clickedCircleListener($index+1)" style="background-color: rgb(209, 255, 97); border-color: rgb(199, 242, 92);">
+              <!-- Don't show 5th color for TESTING GROUP-->
+              <!-- ngIf: $index+1 === _states.lightedUpCircle -->
+
+              <!-- TESTING GROUP: limited to two colors only -->
+              <!-- ngIf: !_states.subscription
+          && _states.onboarding
+          && _states.onboarding.colorLimitReferralTest
+          && $index > _states.onboarding.colorLimitReferralTest -->
+            </div>
+
+            <!-- Color tags -->
+            <!-- ngIf: _states.activeFolder && _states.activeFolder.colorTags && _states.activeFolder.colorTags[$index] != '' -->
+          </div><!-- end ngIf: colorCode != null && !(!_states.subscription && $index=== 4 && _states.onboarding
+             && _states.onboarding.colorLimitReferralTest &&_states.onboarding.colorLimitReferralTest < 4) --><!-- end ngRepeat: colorCode in _states.colorCodes track by $index --><!-- ngIf: colorCode != null && !(!_states.subscription && $index=== 4 && _states.onboarding
+             && _states.onboarding.colorLimitReferralTest &&_states.onboarding.colorLimitReferralTest < 4) --><div ng-repeat="colorCode in _states.colorCodes track by $index" ng-if="colorCode != null &amp;&amp; !(!_states.subscription &amp;&amp; $index=== 4 &amp;&amp; _states.onboarding
+             &amp;&amp; _states.onboarding.colorLimitReferralTest &amp;&amp;_states.onboarding.colorLimitReferralTest &lt; 4)" class="gistnote-popover-circle-wrapper ng-scope">
+            <div class="gistnote-circle gistnote-circle-dim" ng-class="{&#39;gistnote-circle-dim&#39;: $index+1 !==_states.lightedUpCircle}" ng-style="{&#39;background-color&#39;: colorCode, &#39;border-color&#39;: shadeColor(colorCode, -0.05)}" ng-click="clickedCircleListener($index+1)" style="background-color: rgb(180, 255, 235); border-color: rgb(171, 242, 223);">
+              <!-- Don't show 5th color for TESTING GROUP-->
+              <!-- ngIf: $index+1 === _states.lightedUpCircle -->
+
+              <!-- TESTING GROUP: limited to two colors only -->
+              <!-- ngIf: !_states.subscription
+          && _states.onboarding
+          && _states.onboarding.colorLimitReferralTest
+          && $index > _states.onboarding.colorLimitReferralTest -->
+            </div>
+
+            <!-- Color tags -->
+            <!-- ngIf: _states.activeFolder && _states.activeFolder.colorTags && _states.activeFolder.colorTags[$index] != '' -->
+          </div><!-- end ngIf: colorCode != null && !(!_states.subscription && $index=== 4 && _states.onboarding
+             && _states.onboarding.colorLimitReferralTest &&_states.onboarding.colorLimitReferralTest < 4) --><!-- end ngRepeat: colorCode in _states.colorCodes track by $index -->
+
+          <!--TESTING GROUP: Add color button-->
+          <!-- ngIf: !_states.subscription
+                    && _states.user
+                    && _states.onboarding
+                    && _states.onboarding.colorLimitReferralTest
+                    && _states.onboarding.colorLimitReferralTest < 4 -->
+        </div>
+
+        <div class="popover-bottom-section-wrapper">
+          <div ng-click="clickedActiveFolderListener()" class="collection-title-wrapper">
+            <!--<img class="inline-block" style="width: 12px;height: 12px;"-->
+            <!--src="../../../static/images/svg/folder-icon.svg">-->
+            <div class="inline-block collection-title ng-binding" ng-bind="_states.activeFolder ? _states.activeFolder.title : &#39;My Folder&#39;">고객불만 e-Manual</div>
+            <div class="inline-block">
+              <svg id="gistnote-popover-active-folder-dropdown-icon" width="7px" height="5px" viewBox="405 533 7 5" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs></defs>
+                <polygon id="gistnote-popover-dropdown-rectangle" points="405 533 412 533 408.5 538"></polygon>
+              </svg>
+            </div>
+          </div>
+
+          <div class="setting-icon-wrapper" ng-click="clickedSetting()">
+            <img class="inline-block" src="chrome-extension://cbnaodkpfinfiipjblikofhlhlcickei/static/images/svg/setting-icon.svg" style="width: 18px; height: 18px; box-sizing: border-box; padding: 3px; opacity: 0.7;">
+          </div>
+        </div>
+      </div><!-- end ngIf: !_states.showSetting -->
+
+      <!-- Setting page -->
+      <!-- ngIf: _states.showSetting -->
+
+      <!--Customize color modal-->
+      <!-- ngIf: editingColor != null -->
+
+      <div class="gistnote-popover-pointer pointer-at-bottom" ng-class="_states.pointerAtTop? &#39;pointer-at-top&#39; : &#39;pointer-at-bottom&#39;" ng-style="_states.pointerAtTop? {&#39;top&#39;: _states.pointerCoordinates}:{&#39;bottom&#39;: _states.pointerCoordinates}" style="bottom: -5px;"></div>
+    </div>
+  
+
+</body></html>

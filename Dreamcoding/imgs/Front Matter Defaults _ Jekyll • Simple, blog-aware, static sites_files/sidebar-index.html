@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<!-- saved from url=(0102)chrome-extension://cbnaodkpfinfiipjblikofhlhlcickei/src/iframe/sidebarIframe/sidebar-index.html#!/main -->
+<html ng-app="sidebarApp" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <link href="./css" rel="stylesheet">
+    <link href="chrome-extension://cbnaodkpfinfiipjblikofhlhlcickei/src/iframe/sidebarIframe/css/base.css" rel="stylesheet" type="text/css">
+    <script src="chrome-extension://cbnaodkpfinfiipjblikofhlhlcickei/build/iframe/vendor.build.js"></script>
+    <script src="chrome-extension://cbnaodkpfinfiipjblikofhlhlcickei/build/iframe/sidebarIframe/sidebarApp.build.js"></script>
+  </head>
+
+  <body id="normal-color-scheme">
+    <!-- ngView: --><div ng-view="" class="ng-scope"><!-- MAIN PANEL -->
+<div class="no-select gistnote-main-panel ng-scope" ng-class="{&#39;right&#39; :showMenu}">
+  <div ng-controller="websitesCtrl" class="ng-scope">
+    <!-- Main Panel Header-->
+    <div class="main-panel-header-wrapper" ng-class="search.show ? &#39;search-mode&#39; : &#39;&#39;">
+      <div class="navigation">
+        <div class="collection-title-section">
+          <!-- menu button -->
+          <button ng-disabled="!activeFolder&amp;&amp;folderList" class="menu-button icon-button-lighter" style="float: left;" ng-click="toggleMenu()">
+            <img class="menu-icon" ng-src="../../../static/images/svg/hamburger-menu-icon.svg" src="chrome-extension://cbnaodkpfinfiipjblikofhlhlcickei/static/images/svg/hamburger-menu-icon.svg">
+          </button>
+
+          <!-- folder title -->
+          <!-- ngIf: !currentSwitchingFolderId && !search.show --><div ng-if="!currentSwitchingFolderId &amp;&amp; !search.show" class="collection-title-section-right-wrapper ng-scope">
+            <div ng-click="toggleEditPanel($event, activeFolder.folderId, activeFolder)" class="menu-button icon-button-lighter nav-collection-title ng-binding">
+              &#44256;&#44061;&#48520;&#47564; e-Manual
+            </div>
+
+            <!-- ngIf: activeFolderUserMeta -->
+
+            <div class="search-cross-icon-wrapper icon-only icon-circle-button-wrapper nav-icon" ng-click="showSearch()">
+              <img class="icon-circle-button-image" src="chrome-extension://cbnaodkpfinfiipjblikofhlhlcickei/static/images/svg/search-icon.svg">
+            </div>
+          </div><!-- end ngIf: !currentSwitchingFolderId && !search.show -->
+
+          <!-- ngIf: !currentSwitchingFolderId && search.show -->
+
+          <div class="home-icon-wrapper icon-circle-button-wrapper nav-icon hover-target" ng-class="{&#39;active&#39;: invitationCount &gt; 0, &#39;search-show&#39;: search.show}" ng-click="onHomeButtonClick()">
+            <img src="chrome-extension://cbnaodkpfinfiipjblikofhlhlcickei/static/images/svg/home-icon-white.svg" class="icon-circle-button-image">
+            <div class="tooltip format-button-tooltip" style="right: 0; top: 35px; width: 80px; line-height: 15px;">
+              <div class="tooltip-text" style="line-height: 15px;">Go to Dashboard</div>
+              <div class="tooltip-pointer" style="left: 80%;"></div>
+            </div>
+
+            <!--notification-->
+            <!-- ngIf: invitationCount > 0 -->
+          </div>
+        </div>
+      </div>
+      <!-- ngIf: search.show -->
+
+      <!-- sub-header button groups -->
+      <!-- ngIf: !currentSwitchingFolderId && !isEmptyFolder() --><div ng-if="!currentSwitchingFolderId &amp;&amp; !isEmptyFolder()" class="action-selection-wrapper ng-scope">
+        <div class="format-button-group-left-wrapper">
+          <div class="format-button-group">
+            <div class="format-button" ng-click="toggleNewCollectionInput(true)" style="padding-bottom: 1px;">
+              <div style="display: table-cell; vertical-align: middle;">
+                <img width="18px" style="opacity: 0.5;" src="chrome-extension://cbnaodkpfinfiipjblikofhlhlcickei/static/images/svg/folder-create-icon.svg">
+              </div>
+
+              <!-- Testing Group only -->
+              <div class="format-button-tooltip tooltip" style="top: 26px; left: 1px;">
+                <div class="">New sub-folder</div>
+              </div>
+            </div>
+          </div>
+          <!-- ngIf: !subscription --><div ng-if="!subscription" class="format-button-group ng-scope">
+            <div class="upgrade-button" ng-click="upgrade()">
+              Upgrade Premium
+            </div>
+          </div><!-- end ngIf: !subscription -->
+        </div>
+
+        <div class="format-button-group-wrapper">
+          <div class="format-button-group">
+            <div class="format-button" ng-click="expandAllHighlights()" ng-class="{&#39;inactive&#39; : hidingHighlightsWebpages === []}">
+              <img src="chrome-extension://cbnaodkpfinfiipjblikofhlhlcickei/static/images/svg/expand-arrow-icon.svg" style="width: 11px; height: 18px; padding: 0 2px;">
+              <div class="tooltip format-button-tooltip" style="right: -25px; top: 26px;">
+                <div class="tooltip-text">Show highlights</div>
+              </div>
+            </div>
+            <div class="format-button" ng-click="hideAllHighlights()">
+              <img src="chrome-extension://cbnaodkpfinfiipjblikofhlhlcickei/static/images/svg/contract-arrow-icon.svg" style="width: 11px; height: 18px; padding: 0 2px;">
+              <div class="tooltip format-button-tooltip" style="right: -28px; top: 26px;">
+                <div class="tooltip-text">Hide highlights</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="format-button-group">
+            <label for="upload-pdf-header-button" class="format-button" ng-class="{&#39;inactive&#39; : hidingHighlightsWebpages === []}" style="padding: 3px 5px;">
+              <!-- Form for file upload -->
+              <form enctype="multipart/form-data" method="post" class="ng-pristine ng-valid">
+                <input pdf-upload="" accept=".pdf" user="user" click-src="&#39;header&#39;" id="upload-pdf-header-button" type="file" multiple="" style="display: none;" class="ng-isolate-scope">
+              </form>
+              <img src="chrome-extension://cbnaodkpfinfiipjblikofhlhlcickei/static/images/svg/upload-icon.svg" style="width: 18px; height: 18px;">
+              <div class="tooltip format-button-tooltip" style="top: 26px; left: -18px;">
+                <div class="tooltip-text">Upload PDFs</div>
+              </div>
+            </label>
+          </div>
+
+          <div class="format-button-group">
+            <div class="format-button" ng-click="showDropDown=!showDropDown">
+              <img src="chrome-extension://cbnaodkpfinfiipjblikofhlhlcickei/static/images/svg/order-by-icon.svg" style="width: 18px; height: 18px;">
+              <div class="tooltip" style="right: -10px; top: 26px;">
+                <div class="tooltip-text">Order by</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dropdown-menu" ng-class="{active: showDropDown}" style="right: 0;">
+            <div class="dropdown-menu-section" id="sort_by">
+              <div class="dropdown-menu-section-header">Order by</div>
+              <div class="dropdown-menu-item no-select" ng-click="clickSortOption(true)" ng-class="{active: activeFolder.websiteListPagination.ascending}">
+                <!-- ngIf: activeFolder.websiteListPagination.ascending -->
+                Old to New
+              </div>
+              <div class="dropdown-menu-item no-select active" ng-click="clickSortOption(false)" ng-class="{active: !activeFolder.websiteListPagination.ascending}">
+                <!-- ngIf: !activeFolder.websiteListPagination.ascending --><img class="dropdown-menu-checkbox-image ng-scope" style="width: 15px; height: 15px;" ng-if="!activeFolder.websiteListPagination.ascending" src="chrome-extension://cbnaodkpfinfiipjblikofhlhlcickei/static/images/svg/checkmark-colored.svg"><!-- end ngIf: !activeFolder.websiteListPagination.ascending -->
+                New to Old
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- end ngIf: !currentSwitchingFolderId && !isEmptyFolder() -->
+
+      <!-- pdf upload progress bar -->
+      <!-- ngIf: pdfUploadProgress && pdfUploadProgress.current !== null -->
+    </div>
+
+    <!--Edit Collection Modal-->
+    <!-- ngIf: editingFolder.id && editingColor===null -->
+
+    <!--Customize color modal-->
+    <!-- ngIf: editingColor != null -->
+
+    <!--Share Collection Modal-->
+    <!-- ngIf: showShareModal -->
+
+    <!-- Main Panel Content -->
+    <section class="website-list-wrapper" ng-class="getWebsiteListWrapperClass(activeFolder.searchState)">
+      <!-- Loading state -->
+      <!-- ngIf: currentSwitchingFolderId || !activeFolder -->
+
+      <!-- empty state -->
+      <!-- ngIf: !currentSwitchingFolderId && isEmptyFolder() -->
+
+      <!-- non-empty state -->
+      <!-- ngIf: loading.mainPanel -->
+
+      <!-- website list -->
+      <!-- ngIf: activeFolder && !currentSwitchingFolderId && !isEmptyFolder() --><div ng-if="activeFolder &amp;&amp; !currentSwitchingFolderId &amp;&amp; !isEmptyFolder()" class="ng-scope">
+        <!--Rate us Card-->
+        <!-- ngIf: showRateUsBanner && !showDiscountCard && !showNewFeatureCard -->
+
+        <!--Discount Card-->
+        <!-- ngIf: showDiscountCard --><ul ng-if="showDiscountCard" class="main-panel-notification-wrapper ng-scope">
+          <li style="border: none; border-radius: 5px; cursor: default;" class="main-panel-highlight-wrapper">
+            <div class="notification-card-header">Weava Premium 50% OFF</div>
+            <div style="padding: 86px 0; line-height: 1.5; font-size: 20px; font-weight: 200;">
+              It is now
+              <span style="margin-right: -4px;">$3.99</span>
+              <span style="font-size: 12px;"><strike>$7.99</strike>/month</span>
+            </div>
+            <div style="display: inline-block; padding: 4px 0 6px; text-align: left;">
+              <button class="text-button alert-text-button" style="line-height: 19px; font-size: 13px; border-radius: 40px;" ng-click="onDiscountClick($event)">
+                Learn more
+              </button>
+            </div>
+            <div style="display: inline-block; padding: 4px 0 6px; float: right;">
+              <button class="cancel-button" style="line-height: 19px; font-size: 12px;" ng-click="closeDiscountModal($event)">
+                Not now
+              </button>
+            </div>
+            <br>
+          </li>
+        </ul><!-- end ngIf: showDiscountCard -->
+
+        <!--Anonymous warning-->
+        <!-- ngIf: user.isAnonymous -->
+
+        <!-- New feature card -->
+        <!-- ngIf: showNewFeatureCard -->
+
+        <website-list user="user" color-codes="colorCodes" active-folder-user-meta="activeFolderUserMeta" active-folder="activeFolder" website-list="activeFolder.websites" hiding-highlights-webpages="hidingHighlightsWebpages" active-color-filters="activeColorFilters" show-menu="showMenu" toggle-new-collection-input="toggleNewCollectionInput" show-input="showInput" toggle-edit-panel="toggleEditPanel" class="ng-isolate-scope"><!-- Create Folder Form -->
+<!-- ngIf: showInput -->
+
+<!-- Folder List -->
+<!-- ngRepeat: (key, folder) in activeFolder.folderMetaMap -->
+
+<!--Website List-->
+<!-- ngRepeat: website in websiteList |gistnoteWebsitesOrdering:activeFolder.websiteListPagination.ascending:activeFolder.searchState   track by website.websiteId --><!-- ngIf: showWebsiteOrNot(website) --><div ng-repeat="website in websiteList |gistnoteWebsitesOrdering:activeFolder.websiteListPagination.ascending:activeFolder.searchState   track by website.websiteId" ng-if="showWebsiteOrNot(website)" class="website-list ng-scope">
+  <div class="website-card" can-drag="" dragging-type="WEBSITE" dragging-website-id="-MJ4Zobxj40PcM1ftYIU" ng-click="toggleWebsiteHighlights($event, website.websiteId)" draggable="true">
+    <!-- ngIf: website.highlights.length>0 --><div class="expand-website-icon-wrapper ng-scope" ng-if="website.highlights.length&gt;0" ng-class="{
+             &#39;rotate-90&#39;: hidingHighlightsWebpages.indexOf(website.websiteId)==-1,
+              &#39;active&#39;: website.active
+              }">
+      <img style="width: 15px; height: 15px;" src="chrome-extension://cbnaodkpfinfiipjblikofhlhlcickei/static/images/svg/md-play-arrow.svg">
+    </div><!-- end ngIf: website.highlights.length>0 -->
+
+    <div class="web-icon-wrapper">
+      <!-- ngIf: isPDFFromExtension(website.url) -->
+      <!-- ngIf: !isPDFFromExtension(website.url) --><img ng-if="!isPDFFromExtension(website.url)" height="29" width="29" ng-src="https://www.robotis.com/img/common/favicon_16x16_ver1701.ico" class="ng-scope" src="./favicon_16x16_ver1701.ico"><!-- end ngIf: !isPDFFromExtension(website.url) -->
+    </div>
+    <div class="website-card-text-wrapper">
+      <div style="display: block;">
+        <!-- ngIf: isPDFFromExtension(website.url) -->
+        <!-- ngIf: !isPDFFromExtension(website.url) --><a class="card-title website-title no-select ng-binding ng-scope" style="display: inline-block;" ng-click="goToWebsite(website.url, null)" ng-if="!isPDFFromExtension(website.url)" ng-bind-html="getWebsiteTitleHtml(website)">OpenCM 9.04</a><!-- end ngIf: !isPDFFromExtension(website.url) -->
+      </div>
+
+      <div class="website-description ng-binding" ng-bind="website.description"></div>
+
+      <div class="saved-page-status-wrapper">
+        <!-- ngIf: website.highlights.length > 0 --><div ng-if="website.highlights.length &gt; 0" class="highlight-count-wrapper ng-scope">
+          <div class="highlight-icons">
+            <!-- ngRepeat: colorNum in getColorsOfWebsite(website.highlights) --><!-- ngIf: activeColorFilters.indexOf(colorNum) !== -1 || activeColorFilters.length===0 --><div class="gistnote-circle-small highlight-small-circle ng-scope" ng-repeat="colorNum in getColorsOfWebsite(website.highlights)" ng-if="activeColorFilters.indexOf(colorNum) !== -1 || activeColorFilters.length===0">
+              <div ng-style="{&#39;background-color&#39;: getHighlightColorCode(colorNum)}" class="gistnote-circle-small highlight-small-circle" style="background-color: rgb(255, 202, 215);"></div>
+            </div><!-- end ngIf: activeColorFilters.indexOf(colorNum) !== -1 || activeColorFilters.length===0 --><!-- end ngRepeat: colorNum in getColorsOfWebsite(website.highlights) -->
+          </div>
+          <div class="highlight-stat no-select ng-binding">
+            1 highlights |
+          </div>
+        </div><!-- end ngIf: website.highlights.length > 0 -->
+
+        <div class="website-date no-select ng-binding">
+          8th Oct
+        </div>
+      </div>
+    </div>
+
+    <div class="website-card-action-icons-wrapper">
+      <!--<div class="icon-button"-->
+      <!--ng-click="shareWebsite($event, website.websiteId)"-->
+      <!--ng-mouseover="hoverShareWebsite($event)">-->
+      <!--<img-->
+      <!--class="highlight-delete-icon"-->
+      <!--src="../../../static/images/svg/share.svg"-->
+      <!--style="width: 20px;">-->
+      <!--<div class="tooltip main-panel-tooltip"-->
+      <!--style="right: 0; min-width: 35px; padding: 4px; top: 32px;">-->
+      <!--<div class="tooltip-text" style="line-height: 14px;">-->
+      <!--share website-->
+      <!--</div>-->
+      <!--<div class="tooltip-pointer" style="left: 65%;"></div>-->
+      <!--</div>-->
+      <!--</div>-->
+      <div class="icon-button" ng-click="deleteWebsite($event, website.websiteId)">
+        <img class="highlight-delete-icon" src="chrome-extension://cbnaodkpfinfiipjblikofhlhlcickei/static/images/svg/delete-icon.svg" style="width: 20px;">
+        <div class="tooltip main-panel-tooltip" style="right: 0; min-width: 35px; padding: 4px; top: 32px;">
+          <div class="tooltip-text" style="line-height: 14px;">
+            delete
+          </div>
+          <div class="tooltip-pointer" style="left: 65%;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--<li ng-repeat="highlight in website.highlights | filter: { type: 'image'}  | orderBy:'date' track by highlight.highlightId"-->
+  <!--class="main-panel-image-wrapper website-card-left-border"-->
+  <!--ng-click="goToWebsite(website.url, highlight.highlightId, highlight.pdfPageNumber)"-->
+  <!--ng-if="activeColorFilters.length === 0 || activeColorFilters.indexOf(highlight.colorNum) !== -1">-->
+
+  <!--<div ng-if="!highlight.url">-->
+  <!--<img class="main-panel-image-card"-->
+  <!--draggable="false"-->
+  <!--ng-src="{{StaticConstants.GET_IMAGE_API + highlight.highlightId}}"/>-->
+  <!--</div>-->
+
+  <!-- ngIf: hidingHighlightsWebpages.indexOf(website.websiteId)==-1 -->
+</div><!-- end ngIf: showWebsiteOrNot(website) --><!-- end ngRepeat: website in websiteList |gistnoteWebsitesOrdering:activeFolder.websiteListPagination.ascending:activeFolder.searchState   track by website.websiteId --><!-- ngIf: showWebsiteOrNot(website) --><div ng-repeat="website in websiteList |gistnoteWebsitesOrdering:activeFolder.websiteListPagination.ascending:activeFolder.searchState   track by website.websiteId" ng-if="showWebsiteOrNot(website)" class="website-list ng-scope">
+  <div class="website-card" can-drag="" dragging-type="WEBSITE" dragging-website-id="-MGbS3WZGJ3D_Msh_PCH" ng-click="toggleWebsiteHighlights($event, website.websiteId)" draggable="true">
+    <!-- ngIf: website.highlights.length>0 --><div class="expand-website-icon-wrapper ng-scope" ng-if="website.highlights.length&gt;0" ng-class="{
+             &#39;rotate-90&#39;: hidingHighlightsWebpages.indexOf(website.websiteId)==-1,
+              &#39;active&#39;: website.active
+              }">
+      <img style="width: 15px; height: 15px;" src="chrome-extension://cbnaodkpfinfiipjblikofhlhlcickei/static/images/svg/md-play-arrow.svg">
+    </div><!-- end ngIf: website.highlights.length>0 -->
+
+    <div class="web-icon-wrapper">
+      <!-- ngIf: isPDFFromExtension(website.url) -->
+      <!-- ngIf: !isPDFFromExtension(website.url) --><img ng-if="!isPDFFromExtension(website.url)" height="29" width="29" ng-src="https://www.robotis.com/img/common/favicon_16x16_ver1701.ico" class="ng-scope" src="./favicon_16x16_ver1701.ico"><!-- end ngIf: !isPDFFromExtension(website.url) -->
+    </div>
+    <div class="website-card-text-wrapper">
+      <div style="display: block;">
+        <!-- ngIf: isPDFFromExtension(website.url) -->
+        <!-- ngIf: !isPDFFromExtension(website.url) --><a class="card-title website-title no-select ng-binding ng-scope" style="display: inline-block;" ng-click="goToWebsite(website.url, null)" ng-if="!isPDFFromExtension(website.url)" ng-bind-html="getWebsiteTitleHtml(website)">MX-64T/R/AT/AR</a><!-- end ngIf: !isPDFFromExtension(website.url) -->
+      </div>
+
+      <div class="website-description ng-binding" ng-bind="website.description"></div>
+
+      <div class="saved-page-status-wrapper">
+        <!-- ngIf: website.highlights.length > 0 --><div ng-if="website.highlights.length &gt; 0" class="highlight-count-wrapper ng-scope">
+          <div class="highlight-icons">
+            <!-- ngRepeat: colorNum in getColorsOfWebsite(website.highlights) --><!-- ngIf: activeColorFilters.indexOf(colorNum) !== -1 || activeColorFilters.length===0 --><div class="gistnote-circle-small highlight-small-circle ng-scope" ng-repeat="colorNum in getColorsOfWebsite(website.highlights)" ng-if="activeColorFilters.indexOf(colorNum) !== -1 || activeColorFilters.length===0">
+              <div ng-style="{&#39;background-color&#39;: getHighlightColorCode(colorNum)}" class="gistnote-circle-small highlight-small-circle" style="background-color: rgb(255, 202, 215);"></div>
+            </div><!-- end ngIf: activeColorFilters.indexOf(colorNum) !== -1 || activeColorFilters.length===0 --><!-- end ngRepeat: colorNum in getColorsOfWebsite(website.highlights) -->
+          </div>
+          <div class="highlight-stat no-select ng-binding">
+            1 highlights |
+          </div>
+        </div><!-- end ngIf: website.highlights.length > 0 -->
+
+        <div class="website-date no-select ng-binding">
+          7th Sep
+        </div>
+      </div>
+    </div>
+
+    <div class="website-card-action-icons-wrapper">
+      <!--<div class="icon-button"-->
+      <!--ng-click="shareWebsite($event, website.websiteId)"-->
+      <!--ng-mouseover="hoverShareWebsite($event)">-->
+      <!--<img-->
+      <!--class="highlight-delete-icon"-->
+      <!--src="../../../static/images/svg/share.svg"-->
+      <!--style="width: 20px;">-->
+      <!--<div class="tooltip main-panel-tooltip"-->
+      <!--style="right: 0; min-width: 35px; padding: 4px; top: 32px;">-->
+      <!--<div class="tooltip-text" style="line-height: 14px;">-->
+      <!--share website-->
+      <!--</div>-->
+      <!--<div class="tooltip-pointer" style="left: 65%;"></div>-->
+      <!--</div>-->
+      <!--</div>-->
+      <div class="icon-button" ng-click="deleteWebsite($event, website.websiteId)">
+        <img class="highlight-delete-icon" src="chrome-extension://cbnaodkpfinfiipjblikofhlhlcickei/static/images/svg/delete-icon.svg" style="width: 20px;">
+        <div class="tooltip main-panel-tooltip" style="right: 0; min-width: 35px; padding: 4px; top: 32px;">
+          <div class="tooltip-text" style="line-height: 14px;">
+            delete
+          </div>
+          <div class="tooltip-pointer" style="left: 65%;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--<li ng-repeat="highlight in website.highlights | filter: { type: 'image'}  | orderBy:'date' track by highlight.highlightId"-->
+  <!--class="main-panel-image-wrapper website-card-left-border"-->
+  <!--ng-click="goToWebsite(website.url, highlight.highlightId, highlight.pdfPageNumber)"-->
+  <!--ng-if="activeColorFilters.length === 0 || activeColorFilters.indexOf(highlight.colorNum) !== -1">-->
+
+  <!--<div ng-if="!highlight.url">-->
+  <!--<img class="main-panel-image-card"-->
+  <!--draggable="false"-->
+  <!--ng-src="{{StaticConstants.GET_IMAGE_API + highlight.highlightId}}"/>-->
+  <!--</div>-->
+
+  <!-- ngIf: hidingHighlightsWebpages.indexOf(website.websiteId)==-1 -->
+</div><!-- end ngIf: showWebsiteOrNot(website) --><!-- end ngRepeat: website in websiteList |gistnoteWebsitesOrdering:activeFolder.websiteListPagination.ascending:activeFolder.searchState   track by website.websiteId --><!-- ngIf: showWebsiteOrNot(website) --><div ng-repeat="website in websiteList |gistnoteWebsitesOrdering:activeFolder.websiteListPagination.ascending:activeFolder.searchState   track by website.websiteId" ng-if="showWebsiteOrNot(website)" class="website-list ng-scope">
+  <div class="website-card" can-drag="" dragging-type="WEBSITE" dragging-website-id="-MGb2rxlmiCwj_eoAnH6" ng-click="toggleWebsiteHighlights($event, website.websiteId)" draggable="true">
+    <!-- ngIf: website.highlights.length>0 --><div class="expand-website-icon-wrapper ng-scope" ng-if="website.highlights.length&gt;0" ng-class="{
+             &#39;rotate-90&#39;: hidingHighlightsWebpages.indexOf(website.websiteId)==-1,
+              &#39;active&#39;: website.active
+              }">
+      <img style="width: 15px; height: 15px;" src="chrome-extension://cbnaodkpfinfiipjblikofhlhlcickei/static/images/svg/md-play-arrow.svg">
+    </div><!-- end ngIf: website.highlights.length>0 -->
+
+    <div class="web-icon-wrapper">
+      <!-- ngIf: isPDFFromExtension(website.url) -->
+      <!-- ngIf: !isPDFFromExtension(website.url) --><img ng-if="!isPDFFromExtension(website.url)" height="29" width="29" ng-src="https://www.robotis.com/img/common/favicon_16x16_ver1701.ico" class="ng-scope" src="./favicon_16x16_ver1701.ico"><!-- end ngIf: !isPDFFromExtension(website.url) -->
+    </div>
+    <div class="website-card-text-wrapper">
+      <div style="display: block;">
+        <!-- ngIf: isPDFFromExtension(website.url) -->
+        <!-- ngIf: !isPDFFromExtension(website.url) --><a class="card-title website-title no-select ng-binding ng-scope" style="display: inline-block;" ng-click="goToWebsite(website.url, null)" ng-if="!isPDFFromExtension(website.url)" ng-bind-html="getWebsiteTitleHtml(website)">MX-64T/R/AT/AR</a><!-- end ngIf: !isPDFFromExtension(website.url) -->
+      </div>
+
+      <div class="website-description ng-binding" ng-bind="website.description"></div>
+
+      <div class="saved-page-status-wrapper">
+        <!-- ngIf: website.highlights.length > 0 --><div ng-if="website.highlights.length &gt; 0" class="highlight-count-wrapper ng-scope">
+          <div class="highlight-icons">
+            <!-- ngRepeat: colorNum in getColorsOfWebsite(website.highlights) --><!-- ngIf: activeColorFilters.indexOf(colorNum) !== -1 || activeColorFilters.length===0 --><div class="gistnote-circle-small highlight-small-circle ng-scope" ng-repeat="colorNum in getColorsOfWebsite(website.highlights)" ng-if="activeColorFilters.indexOf(colorNum) !== -1 || activeColorFilters.length===0">
+              <div ng-style="{&#39;background-color&#39;: getHighlightColorCode(colorNum)}" class="gistnote-circle-small highlight-small-circle" style="background-color: rgb(255, 202, 215);"></div>
+            </div><!-- end ngIf: activeColorFilters.indexOf(colorNum) !== -1 || activeColorFilters.length===0 --><!-- end ngRepeat: colorNum in getColorsOfWebsite(website.highlights) -->
+          </div>
+          <div class="highlight-stat no-select ng-binding">
+            1 highlights |
+          </div>
+        </div><!-- end ngIf: website.highlights.length > 0 -->
+
+        <div class="website-date no-select ng-binding">
+          7th Sep
+        </div>
+      </div>
+    </div>
+
+    <div class="website-card-action-icons-wrapper">
+      <!--<div class="icon-button"-->
+      <!--ng-click="shareWebsite($event, website.websiteId)"-->
+      <!--ng-mouseover="hoverShareWebsite($event)">-->
+      <!--<img-->
+      <!--class="highlight-delete-icon"-->
+      <!--src="../../../static/images/svg/share.svg"-->
+      <!--style="width: 20px;">-->
+      <!--<div class="tooltip main-panel-tooltip"-->
+      <!--style="right: 0; min-width: 35px; padding: 4px; top: 32px;">-->
+      <!--<div class="tooltip-text" style="line-height: 14px;">-->
+      <!--share website-->
+      <!--</div>-->
+      <!--<div class="tooltip-pointer" style="left: 65%;"></div>-->
+      <!--</div>-->
+      <!--</div>-->
+      <div class="icon-button" ng-click="deleteWebsite($event, website.websiteId)">
+        <img class="highlight-delete-icon" src="chrome-extension://cbnaodkpfinfiipjblikofhlhlcickei/static/images/svg/delete-icon.svg" style="width: 20px;">
+        <div class="tooltip main-panel-tooltip" style="right: 0; min-width: 35px; padding: 4px; top: 32px;">
+          <div class="tooltip-text" style="line-height: 14px;">
+            delete
+          </div>
+          <div class="tooltip-pointer" style="left: 65%;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--<li ng-repeat="highlight in website.highlights | filter: { type: 'image'}  | orderBy:'date' track by highlight.highlightId"-->
+  <!--class="main-panel-image-wrapper website-card-left-border"-->
+  <!--ng-click="goToWebsite(website.url, highlight.highlightId, highlight.pdfPageNumber)"-->
+  <!--ng-if="activeColorFilters.length === 0 || activeColorFilters.indexOf(highlight.colorNum) !== -1">-->
+
+  <!--<div ng-if="!highlight.url">-->
+  <!--<img class="main-panel-image-card"-->
+  <!--draggable="false"-->
+  <!--ng-src="{{StaticConstants.GET_IMAGE_API + highlight.highlightId}}"/>-->
+  <!--</div>-->
+
+  <!-- ngIf: hidingHighlightsWebpages.indexOf(website.websiteId)==-1 -->
+</div><!-- end ngIf: showWebsiteOrNot(website) --><!-- end ngRepeat: website in websiteList |gistnoteWebsitesOrdering:activeFolder.websiteListPagination.ascending:activeFolder.searchState   track by website.websiteId -->
+
+<!-- ngIf: !activeFolder.searchState.searching && maxWebsiteCount() !==0 --><div ng-if="!activeFolder.searchState.searching &amp;&amp; maxWebsiteCount() !==0" style="text-align: center; padding-top: 10px;" class="ng-scope">
+  <!-- ngIf: loadingMoreWebsites() -->
+</div><!-- end ngIf: !activeFolder.searchState.searching && maxWebsiteCount() !==0 -->
+
+<!--delete confirmation modal-->
+<!-- ngIf: deleteConfirmModalShown -->
+
+<!-- ngIf: deleteConfirmModalShown -->
+</website-list>
+      </div><!-- end ngIf: activeFolder && !currentSwitchingFolderId && !isEmptyFolder() -->
+
+      <!-- bottom hint button groups -->
+      <!-- ngIf: !currentSwitchingFolderId && activeFolder && !isEmptyFolder() --><div ng-if="!currentSwitchingFolderId &amp;&amp; activeFolder &amp;&amp; !isEmptyFolder()" class="website-list-bottom-button-wrapper ng-scope">
+        <label style="padding-left: 30px;" for="upload-pdf-website-list-button" class="website-list-bottom-button-group">
+          <form enctype="multipart/form-data" method="post" class="ng-pristine ng-valid">
+            <input pdf-upload="" accept=".pdf" user="user" click-src="&#39;list&#39;" id="upload-pdf-website-list-button" type="file" multiple="" style="display: none;" class="ng-isolate-scope">
+          </form>
+          <div class="website-list-bottom-button-hint">
+            Highlight PDF <br>
+            from my computer:
+          </div>
+          <div class="text-button secondary-text-button" style="width: max-content; margin: 0 auto;">
+            <img width="20px" style="display: inline-block; vertical-align: middle; opacity: 0.7;" src="chrome-extension://cbnaodkpfinfiipjblikofhlhlcickei/static/images/svg/upload-icon.svg">
+            <div style="display: inline-block; vertical-align: middle; padding-left: 4px;">
+              Upload PDFs
+            </div>
+          </div>
+        </label>
+
+        <div class="website-list-bottom-button-group">
+          <div class="website-list-bottom-button-hint">
+            Manage, export &amp; <br>
+            cite highlights:
+          </div>
+          <div>
+            <div ng-click="onGoToDashboardClick()" class="text-button secondary-text-button">
+              <img width="20px" style="display: inline-block; vertical-align: middle; opacity: 0.7;" src="chrome-extension://cbnaodkpfinfiipjblikofhlhlcickei/static/images/svg/home-icon.svg">
+              <div style="display: inline-block; vertical-align: middle; padding-left: 4px;">
+                Go to Dashboard
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- end ngIf: !currentSwitchingFolderId && activeFolder && !isEmptyFolder() -->
+    </section>
+
+    <!--Questionnaire-->
+    <!-- ngIf: showQuestionnaireModal -->
+    <div>
+      <!-- ngIf: showQuestionnaireModal -->
+    </div>
+
+    <!-- Main Panel Footer -->
+    <div class="highlight-mode-bar">
+      <div class="highlight-mode-bar-pin-wrapper">
+        <label ng-controller="pinCtrl" class="switch ng-scope">
+          <input ng-model="pinMode.value" ng-change="togglePinMode()" type="checkbox" class="ng-pristine ng-untouched ng-valid ng-empty">
+          <div class="pin-image" ng-class="{&#39;nav-icon-pinned&#39;: pinMode.value}">
+            <img src="chrome-extension://cbnaodkpfinfiipjblikofhlhlcickei/static/images/svg/pin-icon.svg" ng-class=" {&#39;opacity-show&#39; : !pinMode.value}" style="position: absolute; width: 20px; height: 20px;" class="opacity-show">
+            <img src="chrome-extension://cbnaodkpfinfiipjblikofhlhlcickei/static/images/svg/pin-icon-white.svg" ng-class="{&#39;opacity-show&#39; : pinMode.value}" style="width: 20px; height: 20px;">
+          </div>
+        </label>
+        <div class="tooltip main-panel-tooltip pin-bottom-tooltip pin-left-tooltip">
+          <div class="tooltip-text">
+            Pin sidebar
+            <!-- ngIf: workspace && workspace.commands && workspace.commands['PIN_SIDEBAR_BY_SHORTCUT']!=='' --><span ng-if="workspace &amp;&amp; workspace.commands &amp;&amp; workspace.commands[&#39;PIN_SIDEBAR_BY_SHORTCUT&#39;]!==&#39;&#39;" class="ng-binding ng-scope">
+              (Alt+P)</span><!-- end ngIf: workspace && workspace.commands && workspace.commands['PIN_SIDEBAR_BY_SHORTCUT']!=='' -->
+          </div>
+        </div>
+      </div>
+      <div class="highlight-mode-bar-text-wrapper">
+        <div class="highlight-mode-title no-select">
+          Highlight mode
+        </div>
+      </div>
+      <div class="highlight-mode-wrapper" style="position: relative;">
+        <label class="switch">
+          <input ng-model="workspace.extensionHighlightModeSettings.highlighter" ng-change="toggleHighlightMode()" type="checkbox" class="ng-pristine ng-untouched ng-valid ng-not-empty">
+          <div class="toggle round">
+            <div class="toggle-content ng-binding on" ng-class="{&#39;on&#39;:workspace.extensionHighlightModeSettings.highlighter}" ng-bind="workspace.extensionHighlightModeSettings.highlighter ? &#39;ON&#39; : &#39;OFF&#39;">ON</div>
+          </div>
+        </label>
+        <div class="tooltip main-panel-tooltip pin-bottom-tooltip" style="position: absolute; right: 0px; bottom: 40px; z-index: 1000;">
+          <div class="tooltip-text">
+            Show highlighter popup
+            <!-- ngIf: workspace && workspace.commands
+                          && workspace.commands['TOGGLE_HIGHLIGHT_MODE_BY_SHORTCUT'] !== '' --><span ng-if="workspace &amp;&amp; workspace.commands
+                          &amp;&amp; workspace.commands[&#39;TOGGLE_HIGHLIGHT_MODE_BY_SHORTCUT&#39;] !== &#39;&#39;" class="tooltip-text ng-binding ng-scope">
+              (Alt+S)</span><!-- end ngIf: workspace && workspace.commands
+                          && workspace.commands['TOGGLE_HIGHLIGHT_MODE_BY_SHORTCUT'] !== '' -->
+          </div>
+        </div>
+
+        <!-- ngIf: showHighlightModeGuide -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MENU PANEL -->
+<!-- ngIf: showMenu -->
+</div>
+  
+
+</body></html>
