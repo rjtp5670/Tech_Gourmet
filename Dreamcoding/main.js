@@ -16,9 +16,7 @@ document.addEventListener("scroll", () => {
   }
 });
 
-
 // Handle scrolling when tapping on the navbar menu
-
 const navbaMenu = document.querySelector(".navbar__menu");
 navbaMenu.addEventListener("click", (event)=> {
   console.log(event.target.dataset);
@@ -29,7 +27,7 @@ navbaMenu.addEventListener("click", (event)=> {
     return; // 링크가 존재하지 않을경우, 곧바로 리턴후 종료되도록함. 
   }
   console.log(link); // 링크가 존재 할경우 링크 출력. 
-  scrollIntoView(link);
+  scrollIntoView(link); 
   
 });
 
@@ -43,15 +41,19 @@ homeContactBtn.addEventListener("click", (event)=> {
   const link = target.dataset.link;
   console.log("Link:" + link); 
   scrollIntoView(link);
-
-
-/*   const scroll2 = document.querySelector(link);
-  
-  console.log(scroll2); 
-  
-  scroll2.scrollIntoView({behavior: 'smooth'}); */
-
 });
+
+// Make home slowly fade to transparent as the window scrolls down.home__contact. 
+
+const home = document.querySelector(".home__container");
+const homeheight = home.getBoundingClientRect().height;
+
+document.addEventListener("scroll", () => { 
+console.log("Home Height: " + homeheight);
+home.style.opacity = 1 - window.scrollY/homeheight;
+});
+
+
 
 function scrollIntoView(selector) {
   const scroll = document.querySelector(selector);
