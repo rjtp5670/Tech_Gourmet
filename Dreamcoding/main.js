@@ -29,10 +29,31 @@ navbaMenu.addEventListener("click", (event)=> {
     return; // 링크가 존재하지 않을경우, 곧바로 리턴후 종료되도록함. 
   }
   console.log(link); // 링크가 존재 할경우 링크 출력. 
-  const scrollTo = document.querySelector(link);
-  scrollTo.scrollIntoView({behavior: 'smooth'});
-  
-  /* console.log("document.querySelector(link):" + scrollTo); */
-  /* console.log("Link:" + link); */
+  scrollIntoView(link);
   
 });
+
+// Handle click on "contact me"
+
+const homeContactBtn = document.querySelector(".home__contact");
+
+homeContactBtn.addEventListener("click", (event)=> {
+
+  const target = event.target;
+  const link = target.dataset.link;
+  console.log("Link:" + link); 
+  scrollIntoView(link);
+
+
+/*   const scroll2 = document.querySelector(link);
+  
+  console.log(scroll2); 
+  
+  scroll2.scrollIntoView({behavior: 'smooth'}); */
+
+});
+
+function scrollIntoView(selector) {
+  const scroll = document.querySelector(selector);
+  scroll.scrollIntoView({behavior: 'smooth'});
+}
