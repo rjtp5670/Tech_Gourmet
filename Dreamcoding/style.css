@@ -130,14 +130,12 @@ p {
   padding: 8px 12px;
   margin: 0 4px;
   cursor: pointer; /*Mouse Hovering시, 커서가 바낌*/
+  border: 1px solid transparent;
   border-radius: var(--size-border-radius);
 }
 
-.navbar__menu__item.active {
-  border: 1px solid var(--color-white);
-}
-
 .navbar__menu__item:hover {
+  border-color: white;
   background-color: var(--color-dark-pink);
 }
 
@@ -329,13 +327,13 @@ p {
   font-size: var(--font-regular);
   padding: 8px 48px;
 }
-.category__btn.active,
+.category__btn.selected,
 .category__btn:hover {
   background-color: var(--color-pink);
   color: var(--color-white);
 }
 
-.category__btn.active .category__count.active,
+.category__btn.selected .category__count.selected,
 .category__btn:hover .category__count {
   /* 4:14 무슨말이지? 카테고리 버튼이  active이고, catergory count일때만, category버튼이 호버상태이고 (콤마 필수> and 역할?,) 카테고리인 상태일때만?*/
   opacity: 1;

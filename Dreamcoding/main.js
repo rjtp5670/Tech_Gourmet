@@ -86,6 +86,19 @@ if (filter == null)
 }
 /* console.log(filter); */
 
+//Remove selection from the previous item and select the next one. 
+
+const active = document.querySelector(".category__btn.selected");
+
+active.classList.remove("selected");
+
+const target = 
+e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode; // 'Condition' ? 'True' : 'False';
+
+target.classList.add("selected");
+
+console.log("target :" + e.target.parentNode);
+
 projectContainer.classList.add('anim-out');
 
 setTimeout(()=> { // 해당 코드 실행후, 300 ms를 기다린후 다음 코드를 실행한다. 아래 projects.forEach()가 setTimeout 함수 외부에서 선언 될 경우, 코드가 "동기적" 으로 업데이트 된다. 
@@ -102,6 +115,7 @@ setTimeout(()=> { // 해당 코드 실행후, 300 ms를 기다린후 다음 코�
   });  
 
   projectContainer.classList.remove('anim-out');
+  active.classList.remove("active`");
 
 }
 
