@@ -71,6 +71,63 @@ arrowUp.addEventListener("click", ()=>{
   scrollIntoView("#home");
 })
 
+// Projects
+const workBtnContainer = document.querySelector(".work__categories");
+const projectContainer = document.querySelector(".work__projects");
+const projects = document.querySelectorAll(".project");
+
+workBtnContainer.addEventListener("click", (e) => {
+
+const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter; // 이벤트 발생 (e) 타겟 (e.target)의 데이터 필터(e.target.dataset.filter)에서 Null 값이 나오면 부모노드 (ParentNode)의 데이터 셋 값을 집어넣음.
+
+if (filter == null)
+{
+  return; 
+}
+/* console.log(filter); */
+
+projectContainer.classList.add('anim-out');
+
+setTimeout(()=> { // 해당 코드 실행후, 300 ms를 기다린후 다음 코드를 실행한다. 아래 projects.forEach()가 setTimeout 함수 외부에서 선언 될 경우, 코드가 "동기적" 으로 업데이트 된다. 
+
+  projects.forEach((project) => { // Projects안에서 project라는 변수 (let으로 내부에서 "자동으로" 선언됨)에 projects 배열안의 배열값을 project에 각각 저장. 
+  console.log("project.dataset.type: "+ project.dataset.type);
+  if(filter === "*" || filter === project.dataset.type)
+  {
+    /* console.log("filter:"+ filter); */
+    project.classList.remove("invisible");
+  }else {
+    project.classList.add("invisible");
+  }
+  });  
+
+  projectContainer.classList.remove('anim-out');
+
+}
+
+
+, 300);
+
+// foreach와 동일한 문법. 
+/* 
+console.log("-----------");
+
+for(let project of projects) {
+  console.log(project);
+}
+
+console.log("-----------");
+
+let project;
+for(let i = 0; i > projects.length; i++){
+  project = projects[i];
+  console.log(project);
+} */
+
+}
+
+);
+
 function scrollIntoView(selector) {
   const scroll = document.querySelector(selector);
   scroll.scrollIntoView({behavior: 'smooth'});
