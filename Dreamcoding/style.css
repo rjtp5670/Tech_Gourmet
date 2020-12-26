@@ -139,7 +139,7 @@ p {
   background-color: var(--color-dark-pink);
 }
 
-.navbar__toggle-bth {
+.navbar__toggle-btn {
   position: absolute;
   top: 20px;
   right: 32px;
@@ -409,7 +409,7 @@ p {
 }
 
 .project__description h3 {
-  color: var(--color-white);
+  color: var(--color-orange);
 }
 
 .project__description h3:after {
@@ -418,9 +418,9 @@ p {
   display: block; /* 왜 block? */
   position: relative;
   left: 50%;
-  width: 25px;
+  width: 100px;
   height: 2px;
-  margin-left: -12px;
+  transform: translateX(-50%);
   margin-top: 8px;
   background-color: var(--color-dark0white);
 }
@@ -521,21 +521,30 @@ p {
 /* For below 768px screen width */
 
 @media screen and (max-width: 768px) {
-  .navbar__toggle-bth {
+  .navbar__toggle-btn {
     display: block;
   }
   #navbar {
     /* .navbar__logo > .navbar__menu의 아이템 수직정렬 */
     flex-direction: column; /* 아이템을 수직으로 정렬 */
     align-items: flex-start; /* 중심축이 수직일경우 아이템을 수평 정렬을 위해서 flex-start 를 사용 ? */
+    background-color: var(--color-pink);
+  }
+
+  #navbar.navbar--dark {
+    padding: 16px;
   }
 
   .navbar__menu {
     /* .navbar__menu > .navbar__menu__item 수직정렬 */
-    display: none;
     flex-direction: column;
     text-align: center;
     width: 100%; /* navbar menu 자체의 width가 작기때문에, 화면에 꽉채워서 텍스트를 중앙으로함배치해야함 */
+    display: none;
+  }
+
+  .navbar__menu.open {
+    display: block;
   }
 
   .about__major {
@@ -544,7 +553,7 @@ p {
   }
 
   .major {
-    margin-bottom: 20px;
+    margin-bottom: 38px;
   }
 
   .skillset {

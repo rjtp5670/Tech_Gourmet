@@ -16,9 +16,10 @@ document.addEventListener("scroll", () => {
   }
 });
 
+
 // Handle scrolling when tapping on the navbar menu
-const navbaMenu = document.querySelector(".navbar__menu");
-navbaMenu.addEventListener("click", (event)=> {
+const navbarMenu = document.querySelector(".navbar__menu");
+navbarMenu.addEventListener("click", (event)=> {
   console.log(event.target.dataset);
   const target = event.target;
   const link = target.dataset.link;
@@ -27,8 +28,17 @@ navbaMenu.addEventListener("click", (event)=> {
     return; // 링크가 존재하지 않을경우, 곧바로 리턴후 종료되도록함. 
   }
   console.log(link); // 링크가 존재 할경우 링크 출력. 
+  navbarMenu.classList.remove('open');
   scrollIntoView(link); 
   
+});
+
+// Navbar toggle button for small screen
+
+const navbarToggleBtn = document.querySelector(".navbar__toggle-btn");
+navbarToggleBtn.addEventListener("click", () => {
+
+  navbarMenu.classList.toggle('open');
 });
 
 // Handle click on "contact me"
@@ -116,9 +126,7 @@ setTimeout(()=> { // 해당 코드 실행후, 300 ms를 기다린후 다음 코�
 
   projectContainer.classList.remove('anim-out');
   active.classList.remove("active`");
-
 }
-
 
 , 300);
 
