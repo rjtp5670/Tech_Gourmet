@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .box {
+        width: 300px;
+        height: 300px;
+        margin: 80px auto;
+        background-color: plum;
+        transition: 2000ms;
+      }
+
+      .box.active {
+        background-color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+    <div class="box">7</div>
+    <div class="box">8</div>
+    <div class="box">9</div>
+    <div class="box">10</div>
+    <div class="box">11</div>
+    <div class="box">12</div>
+    <div class="box">13</div>
+    <div class="box">14</div>
+    <div class="box">15</div>
+    <div class="box">16</div>
+    <div class="box">17</div>
+    <div class="box">18</div>
+    <div class="box">19</div>
+    <div class="box">20</div>
+
+    <script>
+      const boxes = document.querySelectorAll(".box");
+      
+      const options = {
+        root: null, // Defualt - viewport
+        rootMargin: "0px", 
+        threshold: 0.5,  // Range - 0 to 1 (100%)
+      };
+
+      // 3. Arrow Function이 아닌, 일반 Function을 사용할 경우, 다음처럼 선언. 
+      const observer_sample = new IntersectionObserver(function tradition (entries, observer_sample) {
+        console.log("Traditional Function: Ovserve !");
+        // entries는 배열이기에, For문으로 각 Index에 접근하여 지정된 box 값을 얻는다. 
+        entries.forEach((entry) => { 
+          if (entry.isIntersecting){ 
+            entry.target.classList.add("active");
+            /* 만약 뷰포트에서 Entry 박스가 빠질경우 다음 함수 실행 */
+          }else { 
+          entry.target.classList.remove("active");
+          }
+        });
+      }, options);
+
+      /* 2. IntersectionObserver 클래스를 observer라는 객체로 선언할때 콜백 함수 (Top-down order에서 벗어나는 Asyncronous Method )를 arrow function 형태로 불러온다. 이때 함수에 이름을 정의 하지않고 사용하면 "Anonymous function"이라고  부른다.
+      이때 "=>" 표시를 Arrow 함수라고 하는데, 기존 함수 정의 방식을 Concise 하게 표현한다. This 등의 사용에서 차이가 있음. 3번에서 기존함수의 사용법을 같이 명시함.*/
+    
+      const observer = new IntersectionObserver((entries, observer) => {
+        console.log("Arrow Function: Ovserve !");
+      }); 
+      
+      /* 1. 지정한 요소가, 특정 영역에 진입했을때 콜백함수를 호출.  */
+      // boxes.forEach(box => observer.observe(box));
+
+      boxes.forEach(function one (box){
+        observer_sample.observe(box);
+      });
+      
+
+</script>
+  </body>
+</html>
+

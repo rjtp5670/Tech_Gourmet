@@ -107,6 +107,7 @@ p {
   padding: 16px;
   background-color: transparent;
   z-index: 1;
+  height: 60px;
 }
 
 #navbar.navbar--dark {
@@ -132,6 +133,10 @@ p {
   cursor: pointer; /*Mouse Hovering시, 커서가 바낌*/
   border: 1px solid transparent;
   border-radius: var(--size-border-radius);
+}
+
+.navbar__menu__item.active {
+  border: 1px solid var(--color-white);
 }
 
 .navbar__menu__item:hover {
