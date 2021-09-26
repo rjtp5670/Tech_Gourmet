@@ -7,6 +7,7 @@
   --color-pink: #fe918d;
   --color-dark-pink: #ff6863;
   --color-black: #4d4d4d;
+  --color-black-trans: #000000a3;
   --color-dark-grey: #4d4d4d;
   --color-grey: #616161;
   --color-light-grey: #7c7979;
@@ -112,7 +113,7 @@ p {
 
 #navbar.navbar--dark {
   /* js에서 적용한 코드가 true일때 #navbar에 navbar__dark가 추가되고, CSS 가 적용됨 */
-  background-color: var(--color-pink);
+  background-color: var(--color-black-trans);
   padding: 8px;
   transition: all var(--animation-duration) ease-in-out;
 }
@@ -141,7 +142,7 @@ p {
 
 .navbar__menu__item:hover {
   border-color: white;
-  background-color: var(--color-dark-pink);
+  /* background-color: var(--color-dark-pink); */
 }
 
 .navbar__toggle-btn {
@@ -154,21 +155,35 @@ p {
 }
 
 #home {
-  background: url("imgs/homebackground.png") center/cover no-repeat;
+  background: url("imgs/kings_valley_02.jpg") center/cover no-repeat;
   padding: 40px;
   text-align: center;
+  height: 100vh;
+}
+
+.home__container {
+  position: absolute;
+  top: 60%;
+  /* left: 30%; */
+  /* transform: translate(-0%, -30%); */
 }
 
 .home__avatar {
+  display: none;
   width: 250px;
   height: 250px;
   border-radius: 50%;
   border: 2px solid var(--color-white);
 }
 
-.home__title,
+.home__title {
+  color: var(--color-white);
+  font-size: 100px;
+}
+
 .home__description {
   color: var(--color-white);
+  font-size: 50px;
 }
 
 .home__contact {
@@ -225,7 +240,7 @@ p {
 
 .major__icon:hover i {
   /*major__icon의 i 태그에, hovering시, 색상변경 및 rotate  */
-  color: var(--color-pink);
+  color: var(--color-black-trans);
   transform: rotate(30deg);
 }
 
@@ -262,10 +277,16 @@ p {
   font-size: var(--font-small);
 }
 
-.job__period {
+.job__details {
+  margin-left: 20px;
   font-size: var(--font-micro);
+  color: var(--color-light-grey);
 }
 
+.job__period {
+  margin-left: 20px;
+  font-size: var(--font-micro);
+}
 /* Skill */
 
 #skills {
@@ -340,7 +361,7 @@ p {
 }
 .category__btn.selected,
 .category__btn:hover {
-  background-color: var(--color-pink);
+  background-color: var(--color-black-trans);
   color: var(--color-white);
 }
 
@@ -479,11 +500,11 @@ p {
 
 .testimonial__speech-bubble a {
   /* .testimonial__speech-bubble의 a 태그는 */
-  color: var(--color-pink);
+  color: var(--color-black-trans);
 }
 
 #contact {
-  background-color: var(--color-pink);
+  background-color: var(--color-black);
 }
 
 .contact__title,
@@ -517,7 +538,7 @@ p {
   height: 70px;
   font-size: 50px;
   color: var(--color-white);
-  background-color: var(--color-pink);
+  background-color: var(--color-black-trans);
   border-radius: 50%;
   opacity: 0;
   pointer-events: none;
@@ -551,7 +572,7 @@ p {
     /* .navbar__logo > .navbar__menu의 아이템 수직정렬 */
     flex-direction: column; /* 아이템을 수직으로 정렬 */
     align-items: flex-start; /* 중심축이 수직일경우 아이템을 수평 정렬을 위해서 flex-start 를 사용 ? */
-    background-color: var(--color-pink);
+    background-color: var(--color-black);
   }
 
   #navbar.navbar--dark {
@@ -564,6 +585,10 @@ p {
     text-align: center;
     width: 100%; /* navbar menu 자체의 width가 작기때문에, 화면에 꽉채워서 텍스트를 중앙으로함배치해야함 */
     display: none;
+  }
+
+  .home__title {
+    font-size: 50px;
   }
 
   .section {

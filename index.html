@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>David's Portfolio</title>
+    <title>David Park</title>
     <meta name="description" content="Portfolio" />
     <meta name="author" content="David" />
     <script
@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/png" href="imgs/favicon.png" />
+    <link rel="icon" type="image/png" href="imgs/welcome_waitor.png" />
     <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
     <!--  HTML이 Parsing 이 되는동안 Javascript 를 다운로드 받고, HTML이 전부 Parsing이 완료가 된다면 js를 실행시킴 -->
@@ -23,7 +23,10 @@
     <!-- Navbar -->
     <nav id="navbar">
       <div class="navbar__logo">
-        <i class="fab fa-diaspora"></i>
+        <img
+        src="imgs/welcome_waitor.png"
+        alt="job__logo"
+      />
         <a href="#">David Park</a>
       </div>
       <!-- <div class="navbar__menu"> -->
@@ -44,119 +47,151 @@
 
     <!-- Home -->
     <section id="home" class="section">
-      <div class="home__container">
+      <div class="home__container" >
         <img
         src="imgs/david.jpg"
         alt="David's profile photo"
         class="home__avatar"
       />
 
-      <h1 class="home__title">Hello, <br />I'am David Park</h1>
-      <h2 class="home__description">I am thirsty of learning</h2>
+      <h1 class="home__title">David Park</h1>
+      <h2 class="home__description">Tech Gourmet</h2>
       <button class="home__contact" data-link="#contact">Contact Me !</button></div>
     </section>
 
     <!-- About -->
     <section id="about" class="section section__container">
       <h1>About Me</h1>
-      <p>I am the best :) I am the best :)I am the best :)I am the best :)I am the best :)I am the best :)I am the best :)</p>
+      <p>Robotics Tech Supporter & Technical Writer.  </p>
       <div class="about__major">
         <div class="major">
           <div class="major__icon">
-            <i class="fab fa-html5"></i>
+            <i class="fas fa-hands-helping"></i>
           </div>
-          <h2 class="major__title">Front-End</h2>
-          <div class="major__description">HTML, CSS, Javascript</div>
+          <h2 class="major__title">Tech Support for B2A</h2>
+          <div class="major__description">-</div>
         </div>
 
         <div class="major">
           <div class="major__icon">
-            <i class="fab fa-html5"></i>
+            <i class="fas fa-laptop-code"></i>
           </div>
-          <h2 class="major__title">C Language</h2>
-          <div class="major__description"></div>
+          <h2 class="major__title">Programming Understanding </h2>
+          <div class="major__description"> - </div>
         </div>
         <div class="major">
           <div class="major__icon">
-            <i class="fab fa-html5"></i>
+            <i class="fas fa-robot"></i>
           </div>
-          <h2 class="major__title">Electronics</h2>
-          <div class="major__description">Majored in Electronics</div>
+          <h2 class="major__title">Electronics Understanding</h2>
+          <div class="major__description">-</div>
         </div>
+        <div class="major">
+          <div class="major__icon">
+            <i class="fas fa-pencil-alt"></i>
+          </div>
+          <h2 class="major__title">Technical Writing</h2>
+          <div class="major__description">-</div>
+        </div>        
       </div>
       <div class="about__jobs">
         <div class="job">
           <img
-            src="/imgs/robotis_logo.png"
+            src="/imgs/robotis_icon.png"
             alt="job__logo"
             width="50x"
             height="50px"
           />
           <div class="job__description">
-            <p class="job__name">
-              Working at ROBOTIS as Technical Supporter and e-Manual Manager
-            </p>
+            <p class="job__name">ROBOTIS</p>
+            <li class="job__details">Tech Supporter & Technical Writer</li>
             <p class="job__period">2019 Mar&ndash;Untill now</p>
           </div>
         </div>
         <div class="job">
           <img
-            src="/imgs/robotis_logo.png"
+            src="/imgs/silla_univ_icon.jpg"
             alt="job__logo"
             height="50px"
             width="50px"
           />
           <div class="job__description">
-            <p class="job__name">Doing Nothing at home</p>
-            <p class="job__period">Infant&ndash;Forever</p>
+            <p class="job__name">Silla University</p>
+            <li class="job__details">Bachelor's degree, Electronics</li>
+            <p class="job__period">2011 Mar&ndash;2019 June</p>
           </div>
         </div>
+        <div class="job">
+          <img
+            src="/imgs/uco_icon.jpg"
+            alt="job__logo"
+            height="50px"
+            width="50px"
+          />
+          <div class="job__description">
+            <p class="job__name">UCO: The University of Central Oklahoma</p>
+            <li class="job__details">Joined Visiting Exchange Student Program in USA</li>
+            <p class="job__period">2016 Jan &ndash;2016 Aug</p>
+          </div>
+        </div> 
+        <div class="job">
+          <img
+            src="/imgs/tlc_icon.jpg"
+            alt="job__logo"
+            height="50px"
+            width="50px"
+          />
+          <div class="job__description">
+            <p class="job__name">The Language Company</p>
+            <li class="job__details">Joined School Exchanged Student Program in USA</li>
+            <p class="job__period">2015 Sep &ndash;2015 Dec</p>
+          </div>
+        </div>                     
       </div>
     </section>
 
     <!-- Skills -->
     <section id="skills" class="section">
       <div class="section__container">
-        <h1>Skills</h1>
-        <h2>Skills & Attribute</h2>
-        <p>I got nothing :(</p>
+        <h1>Skills & Attrubutes</h1>
+<!--         <h2>Skills & Attribute</h2> -->
         <div class="skillset">
           <div class="skillset__left">
             <h3 class="skillset__title">Skills</h3>
             <div class="skill">
               <div class="skill__description">
-                <span>HTML</span>
-                <span>99%</span>
+                <span>C / C++</span>
+                <!-- <span>Intermediate</span> -->
               </div>
               <div class="skill__bar">
-                <div class="skill__value" style="width: 99%"></div>
+                <div class="skill__value" style="width: 100%"></div>
               </div>
             </div>
             <div class="skill">
               <div class="skill__description">
-                <span>CSS</span>
-                <span>99%</span>
+                <span>Python</span>
+                <!-- <span>Intermidiate</span> -->
               </div>
               <div class="skill__bar">
-                <div class="skill__value" style="width: 70%"></div>
+                <div class="skill__value" style="width: 100%"></div>
               </div>
             </div>
             <div class="skill">
               <div class="skill__description">
-                <span>Javascript</span>
-                <span>99%</span>
+                <span>HTML / CSS / Java Script</span>
+                <!-- <span>50%</span> -->
               </div>
               <div class="skill__bar">
-                <div class="skill__value" style="width: 50%"></div>
+                <div class="skill__value" style="width: 100%"></div>
               </div>
             </div>
             <div class="skil">
               <div class="skill__description">
-                <span>REACT</span>
-                <span>99%</span>
+                <span>Technical Writing</span>
+                <!-- <span>99%</span> -->
               </div>
               <div class="skill__bar">
-                <div class="skill__value" style="width: 30%"></div>
+                <div class="skill__value" style="width: 100%"></div>
               </div>
             </div>
           </div>
@@ -165,11 +200,9 @@
               <h3 class="skillset__title">Tools</h3>
               <ul class="tools__list">
                 <li>
-                  <span>Visual Studio Code</span>
-                  <span>Atom</span>
-                  <span>Markdown</span>
-                  <span>Jekyll</span>
-                  <span>5</span>
+                  <li><span>Visual Studio Code</span></li>
+                  <li><span>Atom</span></li>
+                  <li><span>Arduino</span></li>
                 </li>
               </ul>
             </div>
@@ -178,7 +211,8 @@
               <ul class="etc__list">
                 <li><span>Git</span></li>
                 <li><span>Engineering</span></li>
-                <li><span>Arduino</span></li>
+                <li><span>Markdown</span></li>
+                <li><span>Jekyll</span></li>
               </ul>
             </div>
           </div>
@@ -196,13 +230,13 @@
             All <span class="category__count">8</span>
           </button>
           <button class="category__btn" data-filter="front-end">
-            Front-End <span class="category__count">3</span>
+            Electronics <span class="category__count">3</span>
           </button>
           <button class="category__btn" data-filter="back-end">
-            Back-End <span class="category__count">2</span>
+            AI <span class="category__count">2</span>
           </button>
           <button class="category__btn" data-filter="mobile">
-            Mobile <span class="category__count">3</span>
+           WEB  <span class="category__count">3</span>
           </button>
         </div>
         <div class="work__projects">
@@ -314,7 +348,7 @@
           <i class="fab fa-github-square"></i>
         </a>
       </div>
-      <div class="contact__rights">2020 Dream Coding - All right reserved</div>
+      <div class="contact__rights">David Park - All right reserved</div>
     </section>
 
     <!-- Arrow Up -->
