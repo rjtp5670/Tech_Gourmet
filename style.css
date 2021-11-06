@@ -19,7 +19,7 @@
   /* Font Size: 일반적으로 아래처럼 사용됨*/
   --font-large: 48px;
   --font-medium: 28px;
-  --font-regular: 18px;
+  --font-regular: 20px;
   --font-small: 16px;
   --font-micro: 14px;
 
@@ -462,18 +462,19 @@ p {
 }
 
 .testimonials {
-  margin: 40px;
+  margin: 10px;
 }
 
 .testimonial {
   display: flex;
+  width: 100%;
   margin: 32px 0;
 }
 
 .testimonial__avatar {
   width: 150px;
-  height: 150px;
-  border-radius: 50%;
+  /* height: 150px; */
+  border-radius: 20%;
 }
 
 .testimonial__avatar:nth-child(odd) {
@@ -487,14 +488,14 @@ p {
 }
 
 .testimonial__speech-bubble {
-  padding: 18px;
+  padding: 30px;
   background-color: var(--color-white);
   border-radius: var(--size-border-radius);
-  max-width: 1200px;
 }
 
 .testimonial__speech-bubble p {
   /* .testimonial__speech-bubble의 p 태그는 */
+  font-size: var(--font-regular);
   color: var(--color-light-grey);
 }
 
