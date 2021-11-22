@@ -429,9 +429,9 @@ p {
   height: 100%;
   top: 0;
   left: 0;
-  opacity: 0;
+  opacity: 60%;
   transition: all var(--animation-duration) ease-in;
-  transform: translateY(10px);
+  /* transform: translateY(10px); */
 }
 
 .project:hover .project__description {
