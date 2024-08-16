@@ -15,6 +15,10 @@
   --color-yellow: #fff7d1;
   --color-orange: #feb546;
   --color-black: #000000;
+  --color-grey: #cdcdcd;
+  --color-light_beige: #FAF3E0;
+  --color-more_grey: #757575;
+  
 
   /* Font Size: 일반적으로 아래처럼 사용됨*/
   --font-large: 48px;
@@ -290,7 +294,7 @@ p {
 /* Skill */
 
 #skills {
-  background-color: var(--color-yellow);
+  background-color: var(--color-light_beige);
 }
 
 .skillset {
@@ -328,7 +332,7 @@ p {
 .skillset__left {
   /* https://css-tricks.com/almanac/properties/f/flex-basis/ */
   flex-basis: 60%;
-  background-color: var(--color-dark-grey);
+  background-color: var(--color-more_grey);
   padding: 20px 40px;
 }
 
@@ -389,7 +393,7 @@ p {
 
 .work__projects {
   display: flex;
-  flex-wrap: wrap-reverse; /* 아이템이 꽉차면 자동 줄바꿈 */
+  flex-wrap: wrap; /* 아이템이 꽉차면 자동 줄바꿈 */
   justify-content: center;
   opacity: 1;
   transition: all var(--animation-duration) ease-out;
@@ -459,8 +463,9 @@ p {
 
 #testimonials {
   background-color: var(--color-light-white);
+  text-align: left;
+  line-height: 2;
 }
-
 .testimonials {
   margin: 10px;
 }
@@ -472,8 +477,8 @@ p {
 }
 
 .testimonial__avatar {
-  width: 150px;
-  /* height: 150px; */
+  width: 250px;
+  height: 150px;
   border-radius: 20%;
 }
 
@@ -510,6 +515,7 @@ p {
 
 .contact__title,
 .contact__email,
+.contact__linkedin,
 .contact__rights {
   color: var(--color-white);
 }
@@ -520,6 +526,7 @@ p {
 
 .contact__links {
   font-size: var(--font-large);
+  color: var(--color-white);
   margin: 24px 0;
 }
 
@@ -627,6 +634,7 @@ p {
   .testimonial {
     flex-direction: column;
     align-items: center;
+    text-align: left
   }
   .testimonial__avatar {
     width: 120px;
