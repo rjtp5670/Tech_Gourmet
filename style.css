@@ -18,6 +18,7 @@
   --color-grey: #cdcdcd;
   --color-light_beige: #FAF3E0;
   --color-more_grey: #757575;
+  --color-mid_grey: #848181;
   
 
   /* Font Size: 일반적으로 아래처럼 사용됨*/
@@ -345,7 +346,7 @@ p {
 }
 
 .tools {
-  background-color: var(--color-grey);
+  background-color: var(--color-mid_grey);
 }
 .tools,
 .etc {
